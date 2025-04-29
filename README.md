@@ -18,7 +18,7 @@ Sampling and evaluation can be performed with pretrained model, for this another
 
 For more information about script's arguments meaning use
 
-<pre> python train_from_scratch.py --help </pre>
+<pre> python sample_from_pretrained.py --help </pre>
 
 ## Prerequisites
 All necessary dependencies are listed in requirements.txt

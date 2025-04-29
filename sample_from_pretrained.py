@@ -1,6 +1,6 @@
 import argparse
 import numpy as np
-from core.sampling import sample_from_pretrained
+from pipelines.sampling import sample_from_pretrained
 
 parser = argparse.ArgumentParser(description='Samples audio waveforms with defined task and model weights, evaluates and prints out metrics')
 parser.add_argument('--model_path', type=str, help='Path to DiffusionModel weights dictionary')
