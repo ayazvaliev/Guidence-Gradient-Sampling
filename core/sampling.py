@@ -24,7 +24,7 @@ from config.model_params import (
 
 implemented_tasks = ['continuation', 'infill']
 
-def sample_from_pretrained(model_path: str, num_steps: int, task: str, dataset_path: str):
+def sample_from_pretrained(model_path: str, num_steps: int, task: str, dataset_path: str, repeats: int):
     if task not in implemented_tasks:
         raise NotImplementedError('Selected task is not implemented in sampler')
 
@@ -56,15 +56,21 @@ def sample_from_pretrained(model_path: str, num_steps: int, task: str, dataset_p
     except:
         model.load_state_dict(torch.load(model_path, map_location=DEVICE)['model'])
     
-    fads = []
-    mrs = []
-    with torch.no_grad():
-        for samples in test_loader:
-            samples = samples.to(DEVICE)
-            samples_gen = model.sample(samples, num_steps=num_steps, task=task)
+    fads_per_iter = []
+    mrs_per_iter = []
+
+    for _ in repeats:
+        fads = []
+        mrs = []
+        with torch.no_grad():
+            for samples in test_loader:
+                samples = samples.to(DEVICE)
+                samples_gen = model.sample(samples, num_steps=num_steps, task=task)
             
-            fad, mr = evaluator.calculate_fad_and_mr(samples, samples_gen)
-            fads.append(fad)
-            mrs.append(mr)
-    
-    return len(test_dataset), np.mean(np.asarray(fads)), np.mean(np.asarray(mr))
+                fad, mr = evaluator.calculate_fad_and_mr(samples, samples_gen)
+                fads.append(fad)
+                mrs.append(mr)
+        fads_per_iter.append(np.mean(np.asarray(fads)))
+        mrs_per_iter.append(np.mean(np.asarray(mr)))
+
+    return len(test_dataset), np.asarray(fads_per_iter), np.asarray(mrs_per_iter)
