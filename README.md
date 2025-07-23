@@ -6,7 +6,7 @@ This repository includes implemented sampling method for **continuation**, **inf
 
 Install all dependencies listed in **requirements.txt** (suggested to use venv to avoid package version interference):
 
-<pre> pip install -r requirements.txt
+<pre> pip install -r requirements.txt</pre>
 
 You can run following script in root directory of the repository to train V-target Stable diffusion from scratch:
 
