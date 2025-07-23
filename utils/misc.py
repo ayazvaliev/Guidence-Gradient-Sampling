@@ -1,4 +1,4 @@
-from torch import nn as nn
+import torch.nn as nn
 
 def count_parameters(model: nn.Module) -> int:
     total_params = 0

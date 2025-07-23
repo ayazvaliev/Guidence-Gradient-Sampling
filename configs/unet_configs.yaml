@@ -1,0 +1,7 @@
+IN_CHANNELS: 1 # Number of input channels (working with mono wavs)
+CHANNELS: [8, 32, 64, 128, 256, 512, 512] # Number of channels at each layer
+FACTORS: [1, 4, 4, 4, 2, 2, 2] # Downsampling/Upsampling factors for each block
+ITEMS: [1, 2, 2, 3, 3, 2, 2] # Number of residual blocks in each downsampling/upsampling block
+ATTENTIONS: [0, 0, 0, 0, 0, 1, 1] # Attention blocks in each layer
+ATTENTION_HEADS: 8 # U-Net: number of attention heads per attention block
+ATTENTION_FEATURES: 64 # U-Net: number of attention features per attention block

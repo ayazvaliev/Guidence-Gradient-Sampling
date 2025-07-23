@@ -1,0 +1,14 @@
+CROP_S: 4 # Cropped audio signal length in seconds used in training
+SR: 16384 # Sampling rate used in traninig
+L_C: 2 # Left context length in seconds
+R_C: 1.8 # Right context length in seconds
+TRAIN_TEST_SPLIT_RATIO: 0.85
+EMBEDDING_EXTRACTOR_MODEL: null # Specify embedding extractor model for calculating FAD, if null - default to VGGish pytorch port (currently supporting only this)
+SAMPLING_STEPS_EVAL: 20 # Sampling steps made in eval during training
+CKPT_DIR: 'checkpoints'
+BATCH_SIZE: 50
+EPOCHS: 15
+CKPT_INTERVAL: 5 # Checkpoint and evaluation rate during training
+BASE_LR: 1e-4 # Starting learning rate
+WARMUP_STEPS: 5000 # Number of warmup steps
+ACCUM_GRADS: 380 # Gradients accumulated before training step

@@ -2,12 +2,12 @@ import torch
 import numpy as np
 from scipy.linalg import sqrtm
 from torch import Tensor
-from typing import Tuple
+from typing import Tuple, Any
 
 class Evaluator:
     '''Class with evaluation tools'''
 
-    def __init__(self, sr: float, model = None, device: torch.DeviceObjType = torch.device('cpu')):
+    def __init__(self, sr: float, model: Any | None = None, device: torch.DeviceObjType = torch.device('cpu')):
         '''
         model: embeddings extractor model
         sr: sampling rate of waveform batches passed as input 
@@ -19,7 +19,7 @@ class Evaluator:
             self.model.preprocess = False
             self.model.device = device
         else:
-            self.model = model
+            raise NotImplementedError()
 
         self.model.to(device)
         self.sr = sr
