@@ -24,7 +24,7 @@ def load_dataset(dest_path: str, config_path: Path = Path('configs/dataset_confi
                     f.write(response.content)
                 with zipfile.ZipFile(zip_file, 'r') as zip_ref:
                     os.makedirs(dest_path, exist_ok=True)
-                    zip_ref.extract()
+                    zip_ref.extractall(path=dest_path)
         return dest_path
     except KeyError:
         raise KeyError('Unable to download dataset: Config file missing DATASET_URLS keyword')
