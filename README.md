@@ -34,5 +34,7 @@ All necessary dependencies are listed in requirements.txt
 
 ## References
 ["Controllable Music Production with Diffusion Models and Guidance Gradients"](https://arxiv.org/pdf/2311.00613) by Levy et al. (2023).
+
 [archinetai/audio-diffusion-pytorch](https://github.com/archinetai/audio-diffusion-pytorch) - Audio generation using diffusion models, in PyTorch.
+
 [mdeff/fma](https://github.com/mdeff/fma) - FMA: A Dataset For Music Analysis
