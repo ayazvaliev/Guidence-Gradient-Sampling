@@ -37,4 +37,4 @@ All necessary dependencies are listed in requirements.txt
 
 [archinetai/audio-diffusion-pytorch](https://github.com/archinetai/audio-diffusion-pytorch) - Audio generation using diffusion models, in PyTorch.
 
-[mdeff/fma](https://github.com/mdeff/fma) - FMA: A Dataset For Music Analysis
+[mdeff/fma](https://github.com/mdeff/fma) - FMA: A Dataset For Music Analysis.
