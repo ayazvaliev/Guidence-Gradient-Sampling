@@ -1,6 +1,6 @@
 # Implementation of Sampling with Guidance Gradients method from ["Controllable Music Production with Diffusion Models and Guidance Gradients"](https://arxiv.org/pdf/2311.00613)
 
-This repository includes implementation of Gradient Guidence sampling methods for Stable Diffusion models. These tasks from the paper so far have been implemented: **continuation**, **infill**, **regeneration** and **transition**. This repository also includes scripts for training and evaulation pipelines.
+This repository includes implementation of Gradient Guidence sampling methods for V-target diffusion models. These tasks from the paper so far have been implemented: **continuation**, **infill**, **regeneration** and **transition**. This repository also includes scripts for training and evaulation pipelines.
 
 ## Usage
 
@@ -8,7 +8,7 @@ Install all dependencies listed in **requirements.txt** (suggested to use venv t
 
 <pre> pip install -r requirements.txt</pre>
 
-You can run following script in root directory of the repository to train V-target Stable diffusion model from scratch:
+You can run following script in root directory of the repository to train V-target diffusion model from scratch:
 
 <pre> python train_from_scratch.py --download_dataset --do_eval --do_logging --save_model_dir -d [TRAINING DATASET DIR PATH]</pre>
 
