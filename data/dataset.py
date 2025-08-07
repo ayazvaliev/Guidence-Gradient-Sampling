@@ -53,7 +53,7 @@ class FMADataset(Dataset):
         start = random.randint(0, w_tensor.size(0) - self.crop_len)
         w_tensor = w_tensor[start:start + self.crop_len]
         w_tensor = self._apply_hanning(w_tensor)
-        w_tensor = self._normalize(w_tensor)
+        # w_tensor = self._normalize(w_tensor)
 
         if self.return_name:
             return w_tensor.unsqueeze(0), Path(path).stem
